@@ -1,7 +1,11 @@
 import React from 'react';
 
 function NotFound() {
-  return <h1>Not Found</h1>;
+  return (
+    <main>
+      <h1>Not Found</h1>);
+    </main>
+  );
 }
 
 export default NotFound;

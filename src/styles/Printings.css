@@ -1,0 +1,43 @@
+.card-printings {
+  display: table;
+  height: fit-content;
+  margin: 20px;
+  width: 460px;
+}
+
+.card-printings > li {
+  display: table-row;
+}
+
+.card-printings > li:hover {
+  background-color: var(--dark-gray-2);
+}
+
+.card-printings > li:first-of-type {
+  background-color: var(--grayish-blue);
+  font-weight: bold;
+}
+
+.card-printings div {
+  background-color: var(--black-transparent-1);
+  border-bottom: 2px solid var(--dark-gray-2);
+  display: table-cell;
+  height: 40px;
+  padding: 5px 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.card-printings div:not(div:first-of-type) {
+  font-size: 0.8rem;
+  font-weight: bold;
+  width: 100px;
+}
+
+.print-img-container {
+  display: none;
+  background-size: cover;
+  height: 204px;
+  position: absolute;
+  width: 146px;
+}

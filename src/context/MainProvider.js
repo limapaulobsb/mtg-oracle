@@ -1,7 +1,13 @@
 import React, { createContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { fetchAllById, fetchDefaultById, fetchSetList, fetchSymbolList } from '../api';
+import {
+  fetchSetList,
+  fetchSymbolList,
+  fetchDefaultById,
+  fetchLanguages,
+  fetchRulings,
+} from '../api';
 
 export const MainContext = createContext();
 
@@ -10,7 +16,8 @@ function MainProvider({ children }) {
   const [symbolList, setSymbolList] = useState([]);
   const [cardDetails, setCardDetails] = useState({});
   const [defaultCards, setDefaultCards] = useState([]);
-  const [allCards, setAllCards] = useState([]);
+  const [cardLanguages, setCardLanguages] = useState([]);
+  const [cardRulings, setCardRulings] = useState([]);
 
   const getLists = async () => {
     const promises = [fetchSetList(), fetchSymbolList()];
@@ -29,9 +36,14 @@ function MainProvider({ children }) {
     setDefaultCards(cardsData);
   };
 
-  const getAllCards = async (oracleId) => {
-    const cardsData = await fetchAllById(oracleId);
-    setAllCards(cardsData);
+  const getCardLanguages = async (oracleId) => {
+    const cardsData = await fetchLanguages(oracleId);
+    setCardLanguages(cardsData);
+  };
+
+  const getCardRulings = async (oracleId) => {
+    const cardData = await fetchRulings(oracleId);
+    setCardRulings(cardData);
   };
 
   useEffect(() => {
@@ -45,8 +57,10 @@ function MainProvider({ children }) {
     getCardDetails,
     defaultCards,
     getDefaultCards,
-    allCards,
-    getAllCards,
+    cardLanguages,
+    getCardLanguages,
+    cardRulings,
+    getCardRulings,
   };
 
   return <MainContext.Provider value={{ ...shared }}>{children}</MainContext.Provider>;

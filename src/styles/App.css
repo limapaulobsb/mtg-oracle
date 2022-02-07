@@ -1,4 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shalimar&display=swap');
+
+:root {
+  --box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
+  --red: rgb(180, 90, 90);
+  --green: rgb(90, 180, 90);
+  --blue: rgb(90, 90, 180);
+  --grayish-blue: rgb(90, 90, 120);
+  --grayish-blue-transparent: rgba(90, 90, 120, 0.2);
+  --black-transparent-1: rgba(0, 0, 0, 0.1);
+  --black-transparent-2: rgba(0, 0, 0, 0.4);
+  --white-transparent: rgba(255, 255, 255, 0.15);
+  --transparent: rgba(255, 255, 255, 0);
+  --dark-gray-1: rgb(90, 90, 90);
+  --dark-gray-2: rgb(45, 45, 45);
+  --dark-gray-3: rgb(30, 30, 30);
+  --light-gray: rgb(240, 240, 240);
+}
 
 * {
   box-sizing: border-box;
@@ -12,33 +30,38 @@ a {
 }
 
 body {
-  background-color: rgb(45, 45, 45);
-  color: rgb(210, 210, 210);
-  font-family: 'Open Sans', sans-serif;
-  padding-bottom: 400px;
+  background: linear-gradient(var(--dark-gray-2), var(--dark-gray-3));
+  color: var(--light-gray);
+  font-family: 'Lato', sans-serif;
+  min-height: 100vh;
+  padding: 120px 0 400px 0;
 }
 
 button {
   cursor: pointer;
 }
 
-em {
-  font-size: 1.5rem;
-  margin-bottom: 60px;
-}
-
 header {
   align-items: center;
+  background-color: black;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--white-transparent) 0%,
+    var(--transparent) 50%
+  );
+  box-shadow: var(--box-shadow);
   display: flex;
   height: 100px;
   justify-content: space-around;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 main {
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-top: 80px;
 }
 
 .name-search {
@@ -63,4 +86,25 @@ main {
   padding: 0 10px;
   text-transform: uppercase;
   width: 80px;
+}
+
+.small-box {
+  background-color: var(--dark-gray-1);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  padding: 2px 10px;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.bg-red {
+  background-color: var(--red);
+}
+
+.bg-green {
+  background-color: var(--green);
+}
+
+.bg-blue {
+  background-color: var(--blue);
 }

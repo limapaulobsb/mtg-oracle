@@ -1,6 +1,7 @@
 .card-details {
   display: flex;
   margin-bottom: 60px;
+  height: 416px;
 }
 
 .card-details > div {
@@ -8,14 +9,16 @@
 }
 
 .card-image {
-  width: 300px;
+  height: 416px;
+  width: 298px;
 }
 
 .card-text {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--black-transparent-2);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 40%;
+  box-shadow: var(--box-shadow);
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -27,7 +30,7 @@
   justify-content: space-between;
 }
 
-.mana-symbols {
+.mana-symbols-container {
   height: 20px;
 }
 
@@ -52,4 +55,28 @@
   flex-grow: 10;
   font-size: 0.9rem;
   justify-content: flex-end;
+}
+
+.card-details + pre {
+  font-family: 'Shalimar', cursive;
+  font-size: 3.5rem;
+  margin-bottom: 60px;
+}
+
+.legalities {
+  display: grid;
+  font-size: 0.75rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.legalities > div {
+  margin: 10px 20px;
+}
+
+.legalities span:first-of-type {
+  margin-right: 10px;
+}
+
+.more-details {
+  display: flex;
 }

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { MainContext } from '../context/MainProvider';
-import '../styles/PrintList.css';
+import '../styles/Printings.css';
 
-function PrintList({ oracleId }) {
+function Printings({ oracleId }) {
   const { defaultCards, getDefaultCards } = useContext(MainContext);
   const printRef = useRef();
 
@@ -29,11 +29,11 @@ function PrintList({ oracleId }) {
 
   return (
     <>
-      <ul className='print-list'>
+      <ul className='card-printings'>
         <li>
           <div>Prints</div>
-          <div>N</div>
-          <div>F</div>
+          <div>Normal</div>
+          <div>Foil</div>
         </li>
         {defaultCards.map((el, i) => (
           <li
@@ -55,8 +55,8 @@ function PrintList({ oracleId }) {
   );
 }
 
-PrintList.propTypes = {
+Printings.propTypes = {
   oracleId: PropTypes.string.isRequired,
 };
 
-export default PrintList;
+export default Printings;
